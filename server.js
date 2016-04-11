@@ -10,7 +10,7 @@ const io = require("socket.io")(http);
 
 const path = require("path");
 const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo/es5")(session);
 
 require("dotenv").load();
 var models = require("./models");
