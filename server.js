@@ -12,7 +12,9 @@ const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo/es5")(session);
 
-//require("dotenv").load();
+if (!process.env.SESSION_SECRET) {
+  require("dotenv").load();
+}
 var models = require("./models");
 var db = mongoose.connection;
 
